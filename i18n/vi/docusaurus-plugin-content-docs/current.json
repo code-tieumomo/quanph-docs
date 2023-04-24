@@ -1,0 +1,22 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Mobile Intensive": {
+    "message": "Mobile Intensive",
+    "description": "The label for category Mobile Intensive in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Mobile Intensive.link.generated-index.description": {
+    "message": "Lập trình ứng dụng di động nâng cao hơn nữa",
+    "description": "The generated-index page description for category Mobile Intensive in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Topic": {
+    "message": "Topic",
+    "description": "The label for category Topic in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Topic.link.generated-index.description": {
+    "message": "Các chủ đề sản phẩm cuối khóa",
+    "description": "The generated-index page description for category Topic in sidebar tutorialSidebar"
+  }
+}

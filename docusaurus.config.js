@@ -41,15 +41,13 @@ const config = {
                     sidebarPath: require.resolve("./sidebars.js"),
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
-                    editUrl:
-                        "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
+                    editUrl: "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
                 },
                 blog: {
                     showReadingTime: true,
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
-                    editUrl:
-                        "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
+                    editUrl: "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
                 },
                 theme: {
                     customCss: require.resolve("./src/css/custom.css")
@@ -127,7 +125,7 @@ const config = {
                 //         ]
                 //     }
                 // ],
-                copyright: `Copyright © ${new Date().getFullYear()}. Được xây dựng với Docusaurus.`
+                copyright: `Copyright © ${new Date().getFullYear()}. Được <a href="https://github.com/code-tieumomo" target="_blank">Quân</a> xây dựng bằng Docusaurus.`
             },
             prism: {
                 theme: lightCodeTheme,
@@ -138,7 +136,19 @@ const config = {
                     hideable: true
                 }
             }
-        })
+        }),
+
+    plugins: [
+        [
+            require.resolve("@cmfcmf/docusaurus-search-local"),
+            {
+                indexDocs: true,
+                indexBlog: true,
+                indexPages: true,
+                language: "vi"
+            }
+        ]
+    ]
 };
 
 module.exports = config;

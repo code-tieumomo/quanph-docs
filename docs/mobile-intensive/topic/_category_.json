@@ -1,6 +1,5 @@
 {
     "label": "Topic",
-    "position": 1,
     "link": {
         "type": "generated-index",
         "description": "Các chủ đề sản phẩm cuối khóa"

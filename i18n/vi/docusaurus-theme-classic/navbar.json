@@ -1,0 +1,22 @@
+{
+  "title": {
+    "message": "...",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Tài liệu": {
+    "message": "Tài liệu",
+    "description": "Navbar item with label Tài liệu"
+  },
+  "item.label.Bài viết": {
+    "message": "Bài viết",
+    "description": "Navbar item with label Bài viết"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}
