@@ -11,7 +11,7 @@ const config = {
     favicon: "img/favicon.ico",
 
     // Set the production url of your site here
-    url: "https://your-docusaurus-test-site.com",
+    url: "https://quanph.netlify.app",
     // Set the /<baseUrl>/ pathname under which your site is served
     // For GitHub pages deployment, it is often '/<projectName>/'
     baseUrl: "/",
@@ -41,13 +41,15 @@ const config = {
                     sidebarPath: require.resolve("./sidebars.js"),
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
-                    editUrl: "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
+                    editUrl: "https://github.com/code-tieumomo/quanph-docs/tree/master/"
                 },
                 blog: {
                     showReadingTime: true,
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
-                    editUrl: "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
+                    editUrl: "https://github.com/code-tieumomo/quanph-docs/tree/master/",
+                    blogSidebarTitle: "Tất cả bài viết",
+                    blogSidebarCount: "ALL"
                 },
                 theme: {
                     customCss: require.resolve("./src/css/custom.css")
@@ -76,9 +78,9 @@ const config = {
                     },
                     { to: "/blog", label: "Bài viết", position: "left" },
                     {
-                        href: "https://github.com/facebook/docusaurus",
-                        label: "GitHub",
-                        position: "right"
+                        href: "https://github.com/code-tieumomo/quanph-docs",
+                        position: "right",
+                        className: "header-github-link"
                     }
                 ]
             },

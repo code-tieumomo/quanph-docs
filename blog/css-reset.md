@@ -1,5 +1,5 @@
 ---
-title: CSS Reset
+title: "[CSS] CSS Reset"
 description: A Modern CSS Reset
 slug: css-reset
 authors: quanph
@@ -41,6 +41,12 @@ ol[role="list"] {
     list-style: none;
 }
 
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+}
+
 /* Set core root defaults */
 html:focus-within {
     scroll-behavior: smooth;
@@ -56,6 +62,11 @@ body {
 /* A elements that don't have a class get default styles */
 a:not([class]) {
     text-decoration-skip-ink: auto;
+}
+
+/* Remove underline */
+a {
+    text-decoration: none;
 }
 
 /* Make images easier to work with */
