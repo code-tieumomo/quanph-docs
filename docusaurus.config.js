@@ -65,18 +65,27 @@ const config = {
             image: "img/docusaurus-social-card.jpg",
             navbar: {
                 title: "...",
+                hideOnScroll: true,
                 logo: {
                     alt: "Logo",
                     src: "https://img.icons8.com/arcade/100/null/book-shelf.png"
                 },
                 items: [
                     {
+                        to: "/docs/intro",
                         type: "doc",
                         docId: "intro",
                         position: "left",
-                        label: "Tài liệu"
+                        label: "Tài liệu",
+                        sidebarId: "docs"
                     },
-                    { to: "/blog", label: "Bài viết", position: "left" },
+                    {
+                        to: "/posts/intro",
+                        position: "left",
+                        label: "Bài viết",
+                        activeBaseRegex: `/posts/`,
+                        sidebarId: "posts"
+                    },
                     {
                         href: "https://github.com/code-tieumomo/quanph-docs",
                         position: "right",
@@ -85,48 +94,6 @@ const config = {
                 ]
             },
             footer: {
-                // style: "dark",
-                // links: [
-                //     {
-                //         title: "Docs",
-                //         items: [
-                //             {
-                //                 label: "Tutorial",
-                //                 to: "/docs/intro"
-                //             }
-                //         ]
-                //     },
-                //     {
-                //         title: "Community",
-                //         items: [
-                //             {
-                //                 label: "Stack Overflow",
-                //                 href: "https://stackoverflow.com/questions/tagged/docusaurus"
-                //             },
-                //             {
-                //                 label: "Discord",
-                //                 href: "https://discordapp.com/invite/docusaurus"
-                //             },
-                //             {
-                //                 label: "Twitter",
-                //                 href: "https://twitter.com/docusaurus"
-                //             }
-                //         ]
-                //     },
-                //     {
-                //         title: "More",
-                //         items: [
-                //             {
-                //                 label: "Blog",
-                //                 to: "/blog"
-                //             },
-                //             {
-                //                 label: "GitHub",
-                //                 href: "https://github.com/facebook/docusaurus"
-                //             }
-                //         ]
-                //     }
-                // ],
                 copyright: `Copyright © ${new Date().getFullYear()}. Được <a href="https://github.com/code-tieumomo" target="_blank">Quân</a> xây dựng bằng Docusaurus.`
             },
             prism: {
@@ -149,6 +116,27 @@ const config = {
                 indexPages: true,
                 language: "vi"
             }
+        ],
+        [
+            "content-docs",
+            /** @type {import('@docusaurus/plugin-content-docs').Options} */
+            ({
+                id: "posts",
+                path: "posts",
+                routeBasePath: "posts",
+                // editUrl: ({ locale, versionDocsDirPath, docPath }) => {
+                //     if (locale !== defaultLocale) {
+                //         return `https://crowdin.com/project/docusaurus-v2/${locale}`;
+                //     }
+                //     return `https://github.com/facebook/docusaurus/edit/main/website/${versionDocsDirPath}/${docPath}`;
+                // },
+                // remarkPlugins: [npm2yarn],
+                editCurrentVersion: true,
+                sidebarPath: require.resolve("./sidebarsPosts.js"),
+                showLastUpdateAuthor: true,
+                showLastUpdateTime: true,
+                editUrl: "https://github.com/code-tieumomo/quanph-docs/tree/master/"
+            })
         ]
     ]
 };

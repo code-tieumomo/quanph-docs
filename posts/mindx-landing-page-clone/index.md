@@ -1,0 +1,1 @@
+# Mindx Landing Page Clone

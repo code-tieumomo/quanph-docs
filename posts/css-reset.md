@@ -1,5 +1,5 @@
 ---
-title: "[CSS] CSS Reset"
+title: "CSS Reset"
 description: A Modern CSS Reset
 slug: css-reset
 authors: quanph
