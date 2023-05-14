@@ -1,5 +1,6 @@
 ---
 description: Làm quen với Git, Github và cách sử dụng cơ bản.
+image: https://www.freecodecamp.org/news/content/images/size/w2000/2022/07/git-github.png
 ---
 
 # Git và Github
@@ -21,11 +22,23 @@ Git là một hệ thống quản lý phiên bản phân tán, nó có nhiều �
 
 ## Cài đặt Git
 
-Bạn có thể tải Git tại [https://git-scm.com/downloads](https://git-scm.com/downloads).
+Bạn có thể tải Git tại [https://git-scm.com/downloads](https://git-scm.com/downloads). Sau khi tải về phiên bản Git tương thích với hệ điều hành của mình, bạn có thể cài đặt Git bằng cách thực hiện các bước sau:
+
+1. Tải về phiên bản Git tương thích với hệ điều hành
+   ![Cài đặt Git](./img/git-download.png)
+
+2. Mở file cài đặt và thực hiện các bước cài đặt (thường thì chỉ cần chọn `Next` liên tục)
+   ![Cài đặt Git](./img/git-install.png)
+
+3. Sau khi cài đặt xong Git, bạn có thể mở terminal<sup>[[1]](#terminal)</sup> và thực hiện lệnh `git --version` để kiểm tra phiên bản Git đã được cài đặt.
+    ```bash
+    git --version
+    ```
+    ![Cài đặt Git](./img/git-version.png)
 
 ## Cấu hình Git
 
-Sau khi cài đặt Git, bạn cần cấu hình Git để có thể sử dụng được Git.
+Sau khi cài đặt Git, bạn cần mở terminal<sup>[[1]](#terminal)</sup> và cấu hình Git để có thể sử dụng được Git.
 
 ```bash
 # Cấu hình tên người dùng
@@ -37,50 +50,72 @@ git config --global user.email "your_email@example.com"
 
 ## Các khái niệm cơ bản
 
--   **Repository (Kho mã nguồn)**: Kho mã nguồn là nơi lưu trữ toàn bộ lịch sử thay đổi của dự án. Kho mã nguồn có thể được lưu trữ trên máy chủ hoặc trên máy tính cá nhân.
--   **Commit (Phiên bản)**: Mỗi lần thay đổi mã nguồn, bạn cần commit để lưu lại phiên bản hiện tại của mã nguồn. Mỗi commit sẽ có một mã hash duy nhất để phân biệt với các commit khác.
--   **Branch (Nhánh)**: Branch là một phiên bản của kho mã nguồn. Khi bạn muốn phát triển một tính năng mới, bạn có thể tạo một nhánh mới để phát triển tính năng đó mà không ảnh hưởng đến nhánh chính.
--   **Merge (Hợp nhất)**: Merge là thao tác hợp nhất các nhánh lại với nhau. Khi bạn đã hoàn thành tính năng mới, bạn có thể hợp nhất nhánh đó vào nhánh chính.
--   **Pull request (Yêu cầu hợp nhất)**: Pull request là một yêu cầu hợp nhất các nhánh lại với nhau. Khi bạn đã hoàn thành tính năng mới, bạn có thể tạo một pull request để yêu cầu hợp nhất nhánh đó vào nhánh chính.
--   **Fork (Nhân bản)**: Fork là một bản sao của kho mã nguồn. Khi bạn muốn đóng góp vào một dự án, bạn có thể fork dự án đó về tài khoản của mình và đóng góp vào dự án đó.
--   **Clone (Sao chép)**: Clone là một bản sao của kho mã nguồn. Khi bạn muốn làm việc với một dự án, bạn có thể clone dự án đó về máy tính của mình và làm việc với dự án đó.
+:::info
 
-> Local: là môi trường trên máy tính cá nhân. Remote: là môi trường trên máy chủ git (Github).
+-   **Local**: là môi trường trên máy tính cá nhân.
+-   **Remote**: là môi trường trên máy chủ git (**Github**).
 
-## Các thao tác cơ bản
+:::
+
+1. **Repository (Kho mã nguồn)**: Kho mã nguồn là nơi lưu trữ toàn bộ lịch sử thay đổi của dự án. Kho mã nguồn có thể được lưu trữ trên máy chủ hoặc trên máy tính cá nhân.
+2. **Clone (Sao chép)**: Clone là một bản sao của kho mã nguồn. Khi bạn muốn làm việc với một dự án, bạn có thể clone dự án đó về máy tính của mình và làm việc với dự án đó.
+3. **Pull**: Pull là thao tác kéo các commit về máy tính. Khi bạn muốn lấy các commit mới nhất về máy tính, bạn có thể pull các commit đó về máy tính.
+4. **Commit (Phiên bản)**: Mỗi lần thay đổi mã nguồn, bạn cần commit để lưu lại phiên bản hiện tại của mã nguồn. Mỗi commit sẽ có một mã hash duy nhất để phân biệt với các commit khác.
+5. **Branch (Nhánh)**: Branch là một phiên bản của kho mã nguồn. Khi bạn muốn phát triển một tính năng mới, bạn có thể tạo một nhánh mới để phát triển tính năng đó mà không ảnh hưởng đến nhánh chính.
+6. **Merge (Hợp nhất)**: Merge là thao tác hợp nhất các nhánh lại với nhau. Khi bạn đã hoàn thành tính năng mới, bạn có thể hợp nhất nhánh đó vào nhánh chính.
+7. **Pull request (Yêu cầu hợp nhất)**: Pull request là một yêu cầu hợp nhất các nhánh lại với nhau. Khi bạn đã hoàn thành tính năng mới, bạn có thể tạo một pull request để yêu cầu hợp nhất nhánh đó vào nhánh chính.
+8. **Fork (Nhân bản)**: Fork là một bản sao của kho mã nguồn. Khi bạn muốn đóng góp vào một dự án, bạn có thể fork dự án đó về tài khoản của mình và đóng góp vào dự án đó.
+
+<!-- ![Các khái niệm cơ bản](./img/git-basic-theory.png) -->
+
+## Các thao tác
 
 ### Init
+
+Thực hiện lệnh `git init` để khởi tạo một repo mới.
 
 ```bash
 git init
 ```
 
-Thực hiện lệnh `git init` để khởi tạo một repo mới.
+> Tham khảo https://git-scm.com/docs/git-init
 
 ### Clone
+
+Thực hiện lệnh `git clone <url>` để clone một repo vào một folder (thường sẽ tạo một folder cùng tên với repo) trên local. Quá trình clone sẽ khởi tạo remote `origin` trỏ tới repo trên Github. Việc clone thường được thực hiện khi bạn muốn làm việc với một repo đã tồn tại trên remote và chỉ làm một lần duy nhất.
 
 ```bash
 git clone <url>
 ```
 
-Thực hiện lệnh `git clone <url>` để clone một repo về máy tính.
+> Tham khảo https://git-scm.com/docs/git-clone
 
 ### Add
 
+Thực hiện lệnh `git add <file>` để thêm file vào staging area. Các chỉnh sửa/thêm mới không tự được thêm vào staging area mà phải thực hiện lệnh `add`.
+
 ```bash
-git add <file>: Thêm file vào staging area
-git add .: Thêm tất cả các file vào staging area
+git add <file1> <file2> # Thêm file cụ thể vào staging area
+git add -A              # Thêm tất cả thay đổi vào staging area
+git add .               # [Hay dùng nhất] Thêm file mới, file thay đổi (không bao gồm file bị xóa) vào staging area
+git add -u              # Thêm file thay đổi, file bị xóa (không bao gồm file mới) vào staging area
 ```
 
-Thực hiện lệnh `git add <file>` để thêm file vào staging area.
+> Tham khảo https://git-scm.com/docs/git-add
 
 ### Commit
+
+Thực hiện lệnh `git commit -m "<message>"` để commit các file trong staging area, lưu lại sự thay đổi ở phía local.
 
 ```bash
 git commit -m "<message>"
 ```
 
-Thực hiện lệnh `git commit -m "<message>"` để commit các file trong staging area.
+:::danger
+`<message>` là nội dung commit, thường là mô tả về sự thay đổi của các phần code trong commit, ví dụ: **git commit -m "Fix bug #123"**. Message thường ngắn gọn, không quá 50 ký tự, nên viết bằng tiếng Anh và không có dấu câu ở cuối.
+:::
+
+> Tham khảo https://git-scm.com/docs/git-commit
 
 ### Push
 
@@ -98,7 +133,7 @@ git pull origin <branch>
 
 Thực hiện lệnh `git pull origin <branch>` để kéo các commit về máy tính.
 
-### Branch
+<!-- ### Branch
 
 ```bash
 git branch <branch>: Tạo một nhánh mới
@@ -163,7 +198,7 @@ Thực hiện lệnh `git reset <commit>` để quay lại một commit trước
 git revert <commit>: Tạo một commit mới để quay lại một commit trước đó
 ```
 
-Thực hiện lệnh `git revert <commit>` để tạo một commit mới để quay lại một commit trước đó.
+Thực hiện lệnh `git revert <commit>` để tạo một commit mới để quay lại một commit trước đó. -->
 
 ## Github
 
@@ -285,3 +320,11 @@ Bạn có thể clone một repo bằng cách thực hiện các bước sau:
 ### Quy trình làm việc cơ bản
 
 Các thao tác trong Github Desktop đều thực hiện trên GUI rất rõ ràng, quy trình làm việc không khác gì so với sử dụng CLI.
+
+## Chú thích
+
+### Terminal
+
+:::info
+Terminal ở đấy là để chỉ một môi trường dòng lệnh, ví dụ như **Command Prompt, Powershell** trên Windows, **Terminal** trên MacOS, Linux ...
+:::
