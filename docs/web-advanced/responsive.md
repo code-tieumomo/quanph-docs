@@ -1,5 +1,5 @@
 ---
-description: Làm quen với Git, Github và cách sử dụng cơ bản.
+description: Responsive design trong thiết kế web
 image: https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2023/02/css-breakpoints.webp
 toc_max_heading_level: 6
 ---
