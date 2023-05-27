@@ -1,6 +1,7 @@
 ---
 description: Làm quen với Git, Github và cách sử dụng cơ bản.
 image: https://www.freecodecamp.org/news/content/images/size/w2000/2022/07/git-github.png
+toc_max_heading_level: 6
 ---
 
 # Git và Github
@@ -111,7 +112,7 @@ Thực hiện lệnh `git commit -m "<message>"` để commit các file trong st
 git commit -m "<message>"
 ```
 
-:::danger
+:::info
 `<message>` là nội dung commit, thường là mô tả về sự thay đổi của các phần code trong commit, ví dụ: **git commit -m "Fix bug #123"**. Message thường ngắn gọn, không quá 50 ký tự, nên viết bằng tiếng Anh và không có dấu câu ở cuối.
 :::
 
@@ -119,19 +120,27 @@ git commit -m "<message>"
 
 ### Push
 
+Thực hiện lệnh `git push origin <branch>` để đẩy các commit từ local lên remote.
+
 ```bash
-git push origin <branch>
+git push origin <branch> # nên chỉ rõ branch
 ```
 
-Thực hiện lệnh `git push origin <branch>` để đẩy các commit lên remote.
+:::warning Popup đăng nhập khi push lần đầu tiên
+Trên Windows khi push lần đâu tiên sẽ có cửa sổ đăng nhập hiện ra, bạn cần nhập username và password của Github để đăng nhập.
+:::
+
+> Tham khảo https://git-scm.com/docs/git-push
 
 ### Pull
 
+Thực hiện lệnh `git pull origin <branch>` để kéo các commit về máy tính. Thao tác này nên được thực hiện trước khi bắt đầu làm việc để đảm bảo bạn đang làm việc trên phiên bản mới nhất, tránh trường hợp bị conflict.
+
 ```bash
-git pull origin <branch>
+git pull origin <branch> # nên chỉ rõ branch
 ```
 
-Thực hiện lệnh `git pull origin <branch>` để kéo các commit về máy tính.
+> Tham khảo https://git-scm.com/docs/git-pull
 
 <!-- ### Branch
 
@@ -206,7 +215,7 @@ Github là một dịch vụ lưu trữ mã nguồn trực tuyến. Github cung 
 
 ### Tạo một repo mới
 
-Bạn có thể tạo một repo mới bằng cách thực hiện các bước sau:
+Bạn có thể tạo một repo mới trên Github bằng cách thực hiện các bước sau:
 
 1.  Đăng nhập vào Github.
 2.  Nhấn vào nút `New` để tạo một repo mới.
@@ -217,7 +226,7 @@ Bạn có thể tạo một repo mới bằng cách thực hiện các bước s
 
 ### Clone một repo
 
-Bạn có thể clone một repo bằng cách thực hiện các bước sau:
+Bạn có thể clone một repo từ remote (Github) về local bằng cách thực hiện các bước sau:
 
 1.  Đăng nhập vào Github.
 2.  Nhấn vào repo cần clone.
@@ -225,13 +234,44 @@ Bạn có thể clone một repo bằng cách thực hiện các bước sau:
 4.  Chọn `HTTPS` hoặc `SSH`.
 5.  Copy đường dẫn.
 6.  Mở terminal và thực hiện lệnh `git clone <url>`.
-7.  Nhập username và password (thường chỉ có lần đầu tiên là phải nhập).
+7.  Nhập username và password (thường chỉ có lần đầu tiên sau khi mới cài Git là phải nhập).
 
-### Quy trình làm việc cơ bản
+:::info
+Các thao tác trên là thực hiện trên **Windows**, trên **MacOS** và **Linux** sẽ có một số khác biệt nhỏ (phần này nâng cao hơn, bàn sau).
+:::
+
+## Quy trình làm việc cơ bản
+
+### Tạo repo
+
+:::info
+Phần này có 2 trường hợp:
+
+-   Tạo repo trên Github và clone về local. **(cách này thường được sử dụng nhiều hơn khi bắt đầu làm từ đầu)**
+-   Tạo repo trên local và đẩy lên Github. **(cách này thường được sử dụng khi đã có một dự án trên local và muốn đẩy lên Github)**
+
+Dù là trường hợp nào thì vẫn cần có repo trên remote và repo trên local sau đó tạo remote `origin` (bên dưới sẽ hướng dẫn cách tạo) để liên kết với nhau
+:::
+
+#### Tạo repo mới trên Github và clone về local.
+
+1.  Tạo repo mới trên Github theo [hướng dẫn bên trên](#tạo-một-repo-mới)
+2.  Sau khi tạo xong copy đường dẫn repo (có thể ấn nút copy ở phía bên phải hoặc tự copy đường dẫn)
+    ![Tạo repo mới trên Github và clone về local](./img/git-new-repo.png)
+3.  Mở terminal và thực hiện lệnh `git clone <url>` để clone repo về local
+    ```bash
+    git clone <your_git_repo_url>
+    ```
+    ![Tạo repo mới trên Github và clone về local](./img/git-clone.png)
+4.  Sau khi clone xong, sử dụng VSCode mở folder repo vừa clone về và thực hiện lệnh `git remote -v` để kiểm tra remote trỏ tới repo trên Github
+    ```bash
+    git remote -v
+    ```
+    ![Tạo repo mới trên Github và clone về local](./img/git-remote-check.png)
 
 Bạn có thể thực hiện các bước sau để làm việc với một repo:
 
-1.  Clone repo về máy tính (chỉ làm 1 lần duy nhất).
+1.  Clone repo về local (chỉ làm 1 lần duy nhất).
 
     ```bash
     git clone <url>

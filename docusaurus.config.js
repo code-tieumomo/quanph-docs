@@ -65,7 +65,7 @@ const config = {
             image: "img/docusaurus-social-card.jpg",
             navbar: {
                 title: "...",
-                hideOnScroll: true,
+                // hideOnScroll: true,
                 logo: {
                     alt: "Logo",
                     src: "https://img.icons8.com/arcade/100/null/book-shelf.png"
