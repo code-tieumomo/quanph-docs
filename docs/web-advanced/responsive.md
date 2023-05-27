@@ -242,8 +242,8 @@ Mobile First đang dần trở thành một xu hướng thiết kế trang web, 
 
 ## Responsive Layout
 
-Đang cập nhật 🚧🚧🚧
+![Updating...](./img/editing.gif)
 
 ## Responsive Images
 
-Đang cập nhật 🚧🚧🚧
+![Updating...](./img/editing.gif)
