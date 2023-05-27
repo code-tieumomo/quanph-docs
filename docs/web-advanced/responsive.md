@@ -1,6 +1,6 @@
 ---
 description: Làm quen với Git, Github và cách sử dụng cơ bản.
-image: https://www.freecodecamp.org/news/content/images/size/w2000/2022/07/git-github.png
+image: https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2023/02/css-breakpoints.webp
 toc_max_heading_level: 6
 ---
 
