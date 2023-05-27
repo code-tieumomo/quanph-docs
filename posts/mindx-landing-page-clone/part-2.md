@@ -386,6 +386,8 @@ Phần này không quá khó, chỉ cần tạo sẵn phần megamenu, sau đó 
 
 :::warning
 Phần này tương đối phức tạp, ngoài style cho navbar khi responsive còn cần style cho cả megamenu và cần định hình trước UI như nào trước khi làm để có thể tái sử dụng các element đã có tránh phải viết đi viết lại
+
+Tham khảo bài **[Responsive](/docs/web-advanced/responsive)** trước khi thực hiện phần này.
 :::
 
 #### Navbar container
