@@ -12,7 +12,7 @@ Responsive là một khái niệm trong thiết kế web, nó có nghĩa là thi
 
 > Bài này tập trung vào 3 phần chính trong responsive là: **Media Queries**, **Responsive Layout** và **Responsive Images**. Media Queries là một cách để thiết lập các styles cho các thiết bị khác nhau, Responsive Layout thì đều là các thao tác tạo layout chúng ta vẫn thường xuyên làm và Responsive Images là một cách để hiển thị hình ảnh phù hợp với kích thước màn hình. Thường thì Media Queries sẽ được quan tâm nhiều, là phần chính sẽ được nói kĩ hơn trong khi Responsive Images thì ít được quan tâm hơn nhưng cũng rất quan trọng.
 
-## Media Queries
+## Media Queries (<span style={{color: 'red'}}>Quan trọng</span>)
 
 :::danger
 **Media Queries không thể viết được trong inline styles**
@@ -23,14 +23,14 @@ Trước khi bắt đầu, đừng quên set meta viewport cho trang HTML (thôn
 ```html
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        // highlight-start
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        // highlight-end
-        <title>Reponsive</title>
-        ...
-    </head>
-    …
+  <head>
+    // highlight-start
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    // highlight-end
+    <title>Reponsive</title>
+    ...
+  </head>
+  …
 </html>
 ```
 
@@ -42,7 +42,7 @@ Tham khảo thêm tại [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/C
 
 ```css
 @media media-type and (media-feature-rule) {
-    /* CSS-Code */
+  /* CSS-Code */
 }
 ```
 
@@ -50,9 +50,9 @@ Ví dụ
 
 ```css
 @media screen and (max-width: 600px) {
-    body {
-        background-color: lightblue;
-    }
+  body {
+    background-color: lightblue;
+  }
 }
 ```
 
@@ -60,43 +60,43 @@ Ví dụ
 
 Media Type là một cách để xác định loại thiết bị mà chúng ta muốn áp dụng CSS. Có 4 loại media type chính là:
 
--   **all**: Tất cả các thiết bị
--   **print**: Màn hình in
--   **screen**: Màn hình
--   **speech**: Các thiết bị đọc màn hình
+- **all**: Tất cả các thiết bị
+- **print**: Màn hình in
+- **screen**: Màn hình
+- **speech**: Các thiết bị đọc màn hình
 
 #### Media Feature Rule
 
 Media Feature Rule là một cách để xác định các đặc điểm của thiết bị mà chúng ta muốn áp dụng CSS. Có rất nhiều media feature rule, ở đây mình chỉ nói đến một số media feature rule thường được sử dụng nhất.
 
--   **width**: Chiều rộng của thiết bị
--   **height**: Chiều cao của thiết bị
--   **orientation**: Hướng của thiết bị
+- **width**: Chiều rộng của thiết bị
+- **height**: Chiều cao của thiết bị
+- **orientation**: Hướng của thiết bị
 
 ### Các giá trị của Media Feature Rule
 
 #### Width
 
--   **min-width**: Chiều rộng tối thiểu của thiết bị
--   **max-width**: Chiều rộng tối đa của thiết bị
+- **min-width**: Chiều rộng tối thiểu của thiết bị
+- **max-width**: Chiều rộng tối đa của thiết bị
 
 #### Height
 
--   **min-height**: Chiều cao tối thiểu của thiết bị
--   **max-height**: Chiều cao tối đa của thiết bị
+- **min-height**: Chiều cao tối thiểu của thiết bị
+- **max-height**: Chiều cao tối đa của thiết bị
 
 #### Orientation
 
--   **orientation: portrait**: Thiết bị ở chế độ dọc
--   **orientation: landscape**: Thiết bị ở chế độ ngang
+- **orientation: portrait**: Thiết bị ở chế độ dọc
+- **orientation: landscape**: Thiết bị ở chế độ ngang
 
 ### Một số ví dụ cơ bản
 
 ```css
 @media screen and (max-width: 600px) {
-    body {
-        background-color: lightblue;
-    }
+  body {
+    background-color: lightblue;
+  }
 }
 ```
 
@@ -104,9 +104,9 @@ Trong ví dụ trên, nếu chiều rộng của thiết bị lớn hơn 600px t
 
 ```css
 @media screen and (min-width: 600px) and (max-width: 900px) {
-    body {
-        background-color: lightblue;
-    }
+  body {
+    background-color: lightblue;
+  }
 }
 ```
 
@@ -114,9 +114,9 @@ Trong ví dụ trên, nếu chiều rộng của thiết bị lớn hơn 600px v
 
 ```css
 @media screen and (orientation: portrait) {
-    body {
-        background-color: lightblue;
-    }
+  body {
+    background-color: lightblue;
+  }
 }
 ```
 
@@ -124,9 +124,9 @@ Trong ví dụ trên, nếu thiết bị ở chế độ dọc thì nó sẽ áp
 
 ```css
 @media screen and (orientation: landscape) {
-    body {
-        background-color: lightblue;
-    }
+  body {
+    background-color: lightblue;
+  }
 }
 ```
 
@@ -134,9 +134,9 @@ Trong ví dụ trên, nếu thiết bị ở chế độ ngang thì nó sẽ áp
 
 ```css
 @media screen and (min-width: 600px) and (orientation: portrait) {
-    body {
-        background-color: lightblue;
-    }
+  body {
+    background-color: lightblue;
+  }
 }
 ```
 
@@ -144,9 +144,9 @@ Trong ví dụ trên, nếu chiều rộng của thiết bị lớn hơn 600px v
 
 ```css
 @media (min-width: 600px), screen and (orientation: portrait) {
-    body {
-        background-color: lightblue;
-    }
+  body {
+    background-color: lightblue;
+  }
 }
 ```
 
@@ -160,37 +160,37 @@ Breakpoint hay được sử dụng làm media feature rule trong media query. M
 
 ```css
 body {
-    background-color: pink;
+  background-color: pink;
 }
 
 @media screen and (min-width: 640px) {
-    body {
-        background-color: lightblue;
-    }
+  body {
+    background-color: lightblue;
+  }
 }
 
 @media screen and (min-width: 768px) {
-    body {
-        background-color: lightgreen;
-    }
+  body {
+    background-color: lightgreen;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-    body {
-        background-color: lightyellow;
-    }
+  body {
+    background-color: lightyellow;
+  }
 }
 
 @media screen and (min-width: 1280px) {
-    body {
-        background-color: lightgray;
-    }
+  body {
+    background-color: lightgray;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-    body {
-        background-color: lightcoral;
-    }
+  body {
+    background-color: lightcoral;
+  }
 }
 
 /* Với mỗi lần vượt qua 1 breakpoint, body sẽ thay đổi màu nền */
@@ -202,13 +202,13 @@ Breakpoints có rất nhiều quy ước, ở đây sẽ nói đến một số 
 
 Trình duyệt web như Chrome, Edge, ... quy định một số breakpoints như sau (có thể mở DevTools -> Toggle Device Emulation để xem chi tiết):
 
--   **320px**: Mobile S
--   **375px**: Mobile M
--   **425px**: Mobile L
--   **768px**: Tablet
--   **1024px**: Laptop
--   **1440px**: Laptop L
--   **2560px**: 4K
+- **320px**: Mobile S
+- **375px**: Mobile M
+- **425px**: Mobile L
+- **768px**: Tablet
+- **1024px**: Laptop
+- **1440px**: Laptop L
+- **2560px**: 4K
 
 > Ngoài ra trình duyệt còn có sẵn các profile (hoặc cho phép tạo các profile) tương ứng với nhiều loại điện thoại khác nhau như iPhone 5, iPhone 6, iPhone 6 Plus, ... và các loại máy tính bảng như iPad, iPad Pro, ...
 
@@ -216,21 +216,21 @@ Trình duyệt web như Chrome, Edge, ... quy định một số breakpoints nh�
 
 Bootstrap quy định một số breakpoints như sau:
 
--   **576px**: Extra small devices (portrait phones, less than 576px)
--   **768px**: Small devices (landscape phones, 576px and up)
--   **992px**: Medium devices (tablets, 768px and up)
--   **1200px**: Large devices (desktops, 992px and up)
--   **1400px**: Extra large devices (large desktops, 1200px and up)
+- **576px**: Extra small devices (portrait phones, less than 576px)
+- **768px**: Small devices (landscape phones, 576px and up)
+- **992px**: Medium devices (tablets, 768px and up)
+- **1200px**: Large devices (desktops, 992px and up)
+- **1400px**: Extra large devices (large desktops, 1200px and up)
 
 #### Theo TailwindCSS
 
 TailwindCSS quy định một số breakpoints như sau:
 
--   **640px**: sm
--   **768px**: md
--   **1024px**: lg
--   **1280px**: xl
--   **1536px**: 2xl
+- **640px**: sm
+- **768px**: md
+- **1024px**: lg
+- **1280px**: xl
+- **1536px**: 2xl
 
 ### Mobile First
 
@@ -242,8 +242,54 @@ Mobile First đang dần trở thành một xu hướng thiết kế trang web, 
 
 ## Responsive Layout
 
-![Updating...](./img/updating-big.gif)
+Bằng cách sử dụng những layout như grid, flex ta có thể responsive cho trang mà không cần đến quá nhiều breakpoints.
+
+### Flex
+
+Trong flexbox, sử dụng linh hoạt `flex-shrink`, `flex-basis` và `flex-grow` để thay đổi kích thước của các phần tử con một cách hợp lý để tạo được layout responsive.
+
+:::tip
+Tham khảo thêm tại [Flexbox: Flexible sizing of flex items](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox#flexible_sizing_of_flex_items)
+:::
+
+### Grid
+
+Grid là một cách để tạo layout cho trang web bằng cách chia trang thành các cột và hàng. Sử dụng đơn vị `fr` một cách hp lý để chia tỉ lệ cho các cột và hàng.
+
+:::tip
+Tham khảo thêm tại [Flexible grids with the fr unit](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids#flexible_grids_with_the_fr_unit)
+:::
+
+### Multi-column Layout
+
+Multi-column Layout là một cách để tạo layout cho trang web bằng cách chia trang thành nhiều cột. Multi-column Layout có thể được sử dụng để tạo layout cho trang web mà không cần đến grid hay flex.
+
+:::tip
+Tham khảo thêm tại [Using multi-column layouts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns/Using_multi-column_layouts)
+:::
 
 ## Responsive Images
 
-![Updating...](./img/updating-big.gif)
+`srcset` và `sizes` là hai thuộc tính của thẻ `<img>` được sử dụng để hiển thị hình ảnh phù hợp với kích thước màn hình.
+
+- Thuộc tính `srcset` được sử dụng để chỉ định các hình ảnh khác nhau cho các kích thước màn hình khác nhau. Các hình ảnh được liệt kê trong thuộc tính `srcset` được phân tách bằng dấu phẩy. Mỗi hình ảnh được liệt kê trong `srcset` bao gồm một URL và một kích thước.
+- Thuộc tính `sizes` được sử dụng để chỉ định kích thước của hình ảnh trên màn hình. Thuộc tính `sizes` có thể được sử dụng để chỉ định kích thước của hình ảnh trên màn hình, hoặc nó có thể được sử dụng để chỉ định kích thước của hình ảnh trên màn hình và kích thước của hình ảnh trên trang in.
+
+```html
+<img
+  src="images/small.jpg"
+  srcset="images/small.jpg 300w, images/medium.jpg 600w, images/large.jpg 900w"
+  sizes="(max-width: 600px) 300px, 600px"
+  alt="A rad wolf"
+/>
+```
+
+Trong ví dụ trên, nếu chiều rộng của thiết bị nhỏ hơn 600px thì nó sẽ hiển thị hình ảnh `small.jpg`, nếu chiều rộng của thiết bị lớn hơn 600px thì nó sẽ hiển thị hình ảnh `medium.jpg`. Cụ thể hơn:
+
+- Kiểm tra kích thước màn hình của thiết bị
+- Nếu kích thước màn hình nhỏ hơn 600px thì chọn mốc 300px, nếu kích thước màn hình lớn hơn 600px thì chọn mốc 600px
+- Hiển thị hình ảnh tương ứng với mốc đã chọn
+
+:::tip
+Tham khảo thêm tại [Responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
+:::
