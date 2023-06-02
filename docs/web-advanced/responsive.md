@@ -12,7 +12,7 @@ Responsive là một khái niệm trong thiết kế web, nó có nghĩa là thi
 
 > Bài này tập trung vào 3 phần chính trong responsive là: **Media Queries**, **Responsive Layout** và **Responsive Images**. Media Queries là một cách để thiết lập các styles cho các thiết bị khác nhau, Responsive Layout thì đều là các thao tác tạo layout chúng ta vẫn thường xuyên làm và Responsive Images là một cách để hiển thị hình ảnh phù hợp với kích thước màn hình. Thường thì Media Queries sẽ được quan tâm nhiều, là phần chính sẽ được nói kĩ hơn trong khi Responsive Images thì ít được quan tâm hơn nhưng cũng rất quan trọng.
 
-## Media Queries (<span style={{color: 'red'}}>Quan trọng</span>)
+## Media Queries
 
 :::danger
 **Media Queries không thể viết được trong inline styles**
