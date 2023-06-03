@@ -2,6 +2,7 @@
 description: Làm quen với Git, Github và cách sử dụng cơ bản.
 image: https://www.freecodecamp.org/news/content/images/size/w2000/2022/07/git-github.png
 toc_max_heading_level: 6
+sidebar_position: 1
 ---
 
 # Git và Github
@@ -14,12 +15,12 @@ Git là một hệ thống quản lý phiên bản phân tán (Distributed Versi
 
 Git là một hệ thống quản lý phiên bản phân tán, nó có nhiều ưu điểm hơn so với hệ thống quản lý phiên bản tập trung (Centralized Version Control System - CVCS) như Subversion (SVN).
 
--   **Mỗi máy tính đều có một bản sao của toàn bộ kho mã nguồn**. Điều này có nghĩa là khi máy chủ chính bị hỏng, bạn có thể sử dụng bất kỳ bản sao nào để sao lưu lại dự án của mình.
--   **Các thao tác trên Git đều được thực hiện offline**. Điều này có nghĩa là bạn có thể làm việc mà không cần kết nối Internet. Sau khi bạn đã có một kho mã nguồn, bạn có thể làm việc trên đó mà không cần kết nối Internet.
--   **Các thao tác trên Git đều nhanh chóng**. Bạn có thể thực hiện các thao tác như commit, branch, merge, checkout, ... một cách nhanh chóng.
--   **Git có khả năng phân nhánh tốt**. Bạn có thể tạo nhiều nhánh để phát triển dự án mà không ảnh hưởng đến nhánh chính.
--   **Git có khả năng hợp nhất tốt**. Bạn có thể hợp nhất các nhánh lại với nhau một cách dễ dàng.
--   **Git có khả năng theo dõi lịch sử tốt**. Bạn có thể xem được lịch sử thay đổi của dự án.
+- **Mỗi máy tính đều có một bản sao của toàn bộ kho mã nguồn**. Điều này có nghĩa là khi máy chủ chính bị hỏng, bạn có thể sử dụng bất kỳ bản sao nào để sao lưu lại dự án của mình.
+- **Các thao tác trên Git đều được thực hiện offline**. Điều này có nghĩa là bạn có thể làm việc mà không cần kết nối Internet. Sau khi bạn đã có một kho mã nguồn, bạn có thể làm việc trên đó mà không cần kết nối Internet.
+- **Các thao tác trên Git đều nhanh chóng**. Bạn có thể thực hiện các thao tác như commit, branch, merge, checkout, ... một cách nhanh chóng.
+- **Git có khả năng phân nhánh tốt**. Bạn có thể tạo nhiều nhánh để phát triển dự án mà không ảnh hưởng đến nhánh chính.
+- **Git có khả năng hợp nhất tốt**. Bạn có thể hợp nhất các nhánh lại với nhau một cách dễ dàng.
+- **Git có khả năng theo dõi lịch sử tốt**. Bạn có thể xem được lịch sử thay đổi của dự án.
 
 ## Cài đặt Git
 
@@ -32,10 +33,10 @@ Bạn có thể tải Git tại [https://git-scm.com/downloads](https://git-scm.
    ![Cài đặt Git](./img/git-install.png)
 
 3. Sau khi cài đặt xong Git, bạn có thể mở terminal<sup>[[1]](#terminal)</sup> và thực hiện lệnh `git --version` để kiểm tra phiên bản Git đã được cài đặt.
-    ```bash
-    git --version
-    ```
-    ![Cài đặt Git](./img/git-version.png)
+   ```bash
+   git --version
+   ```
+   ![Cài đặt Git](./img/git-version.png)
 
 ## Cấu hình Git
 
@@ -53,8 +54,8 @@ git config --global user.email "your_email@example.com"
 
 :::info
 
--   **Local**: là môi trường trên máy tính cá nhân.
--   **Remote**: là môi trường trên máy chủ git (**Github**).
+- **Local**: là môi trường trên máy tính cá nhân.
+- **Remote**: là môi trường trên máy chủ git (**Github**).
 
 :::
 
@@ -247,8 +248,8 @@ Các thao tác trên là thực hiện trên **Windows**, trên **MacOS** và **
 :::info
 Phần này có 2 trường hợp:
 
--   Tạo repo trên Github và clone về local. **(cách này thường được sử dụng nhiều hơn khi bắt đầu làm từ đầu)**
--   Tạo repo trên local và đẩy lên Github. **(cách này thường được sử dụng khi đã có một dự án trên local và muốn đẩy lên Github)**
+- Tạo repo trên Github và clone về local. **(cách này thường được sử dụng nhiều hơn khi bắt đầu làm từ đầu)**
+- Tạo repo trên local và đẩy lên Github. **(cách này thường được sử dụng khi đã có một dự án trên local và muốn đẩy lên Github)**
 
 Dù là trường hợp nào thì vẫn cần có repo trên remote và repo trên local sau đó tạo remote `origin` (bên dưới sẽ hướng dẫn cách tạo) để liên kết với nhau
 :::
