@@ -1,6 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+require("dotenv").config();
+
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
@@ -11,7 +13,7 @@ const config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://quanph.netlify.app",
+  url: process.env.APP_ENV === "development" ? "http://localhost:3000" : "https://quanph.netlify.app",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -87,6 +89,11 @@ const config = {
             sidebarid: "posts"
           },
           {
+            href: "/settings",
+            position: "right",
+            className: "header-config-link"
+          },
+          {
             href: "https://github.com/code-tieumomo/quanph-docs",
             position: "right",
             className: "header-github-link"
@@ -138,7 +145,10 @@ const config = {
         editUrl: "https://github.com/code-tieumomo/quanph-docs/tree/master/"
       })
     ]
-  ]
+  ],
+  customFields: {
+    isOpenPlayground: true
+  }
 };
 
 module.exports = config;

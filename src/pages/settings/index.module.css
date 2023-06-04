@@ -1,0 +1,59 @@
+.settingsContainer {
+  width: 80%;
+  margin: 5rem auto;
+}
+
+.settingTitle {
+  font-size: 0.75rem;
+  font-style: italic;
+  font-weight: 500;
+  color: #929292;
+  margin-bottom: 0.6rem;
+}
+
+.settingItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #414751;
+}
+
+.switch {
+  position: relative;
+  display: inline-flex;
+  height: 1.5rem;
+  width: 2.75rem;
+  align-items: center;
+  border-radius: 9999px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.switchEnabled {
+  background-color: #2e8555;
+}
+
+.switchDisabled {
+  background-color: #ccc;
+}
+
+.switchDot {
+  /* translate-x-6 inline-block h-4 w-4 transform rounded-full bg-white transition */
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 9999px;
+  background-color: white;
+  transition: transform 0.2s ease-in-out;
+}
+
+.dotEnabled {
+  transform: translateX(1.125rem);
+}
+
+.dotDisabled {
+  transform: translateX(-0.125rem);
+}

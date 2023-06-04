@@ -10,8 +10,16 @@ Mọi ý kiến đóng góp vui lòng sửa tại mục <a href="#" rel="norefer
 
 :::
 
+## Code playground
+
+Trong các trang tài liệu, ta có thể sử dụng các code playground để thực thi và kiểm tra nhanh kết quả của code minh họa, qua đó hiểu rõ hơn về cách sử dụng các hàm, phương thức, cú pháp, ...
+
+:::danger
+Tuy nhiên có một lưu ý, việc sử dụng code playground tương đối tốn tài nguyên và quá nhiều code playground sẽ làm chậm tốc độ tải trang. Vì vậy, các code playground mặc định sẽ luôn tắt, để bật các code playground, cần vào trang [Cài đặt](/settings) và bật `Code playground` (mặc định là tắt).
+:::
+
 ## Todo
 
 - [ ] Hoàn thiện bài Git
-- [ ] Hoàn thiện bài Responsive
+- [x] Hoàn thiện bài Responsive
 - [ ] Thêm bài Selector CSS (https://www.lambdatest.com/blog/css-selectors-cheat-sheet/https://www.lambdatest.com/blog/css-selectors-cheat-sheet/)

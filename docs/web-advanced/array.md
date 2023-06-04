@@ -6,7 +6,7 @@ sidebar_position: 3
 ---
 
 import Playground from "javascript-playgrounds"
-import {StackblitzPlayground} from '@site/src/components/StackblitzPlayground';
+import { SimpleBSPlayground } from '@site/src/components/SimpleBSPlayground';
 
 # Array
 
@@ -48,9 +48,9 @@ console.log(arr[3]); // 4
 console.log(arr[4]); // 5
 ```
 
-### Thực hành
+---
 
-<StackblitzPlayground fileName="access-array-items"/>
+<SimpleBSPlayground fileName="access-array-items"/>
 
 ## Số phần tử của mảng
 
@@ -61,6 +61,10 @@ let arr = [1, 2, 3, 4, 5];
 
 console.log(arr.length); // 5
 ```
+
+---
+
+<SimpleBSPlayground fileName="count-array-items" height={50}/>
 
 ## Các phương thức thường sử dụng của Array
 
@@ -76,6 +80,10 @@ arr.push(6);
 console.log(arr); // [1, 2, 3, 4, 5, 6]
 ```
 
+---
+
+<SimpleBSPlayground fileName="push-item-to-array" height={50}/>
+
 ### `pop()`
 
 Phương thức `pop()` được sử dụng để xóa phần tử cuối cùng của mảng. Ví dụ:
@@ -88,6 +96,10 @@ arr.pop();
 console.log(arr); // [1, 2, 3, 4]
 ```
 
+---
+
+<SimpleBSPlayground fileName="pop-item-from-array" height={50}/>
+
 ### `shift()`
 
 Phương thức `shift()` được sử dụng để xóa phần tử đầu tiên của mảng. Ví dụ:
@@ -99,6 +111,10 @@ arr.shift();
 
 console.log(arr); // [2, 3, 4, 5]
 ```
+
+---
+
+<SimpleBSPlayground fileName="shift-item-from-array" height={50}/>
 
 :::tip
 Ngoài ra còn rất nhiều phương thức khác của Array, có thể tham khảo thêm tại [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#instance_methods).
