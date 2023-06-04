@@ -5,6 +5,9 @@ toc_max_heading_level: 6
 sidebar_position: 3
 ---
 
+import Playground from "javascript-playgrounds"
+import {StackblitzPlayground} from '@site/src/components/StackblitzPlayground';
+
 # Array
 
 ## Khái niệm
@@ -44,6 +47,10 @@ console.log(arr[2]); // 3
 console.log(arr[3]); // 4
 console.log(arr[4]); // 5
 ```
+
+### Thực hành
+
+<StackblitzPlayground fileName="access-array-items"/>
 
 ## Số phần tử của mảng
 
@@ -120,7 +127,7 @@ console.log(arr); // [0, 1, 2, 3, 4, 5, 6]
 
 // Thêm phần tử vào vị trí bất kỳ
 // highlight-next-line
-arr.splice(3, 0, 3.5); // var_name.splice(index_need_to_insert, 0, value)
+arr.splice(4, 0, 3.5); // var_name.splice(index_need_to_insert, 0, value)
 
 console.log(arr); // [0, 1, 2, 3, 3.5, 4, 5, 6]
 ```
@@ -195,9 +202,41 @@ console.log(arr); // [1, empty, 3, 4, 5]
 nhưng `delete` không hoàn toàn xóa phần tử khỏi mảng mà chỉ đặt giá trị của phần tử đó thành `undefined`.
 :::
 
-<iframe
-  width="880"
-  height="425"
-  frameBorder="0"
-  src="//unpkg.com/javascript-playgrounds@^1.0.0/public/index.html"
-></iframe>
+## Array `foreach`
+
+Array `foreach` là một phương thức của Array, được sử dụng để **duyệt qua từng phần tử trong mảng** và **thực hiện cùng một logic giống nhau** với mỗi phần tử và index tương ứng.
+
+### Cú pháp:
+
+```javascript
+array_var_name.forEach((item, index) => {
+  // item đại diện cho phần tử hiện tại đang duyệt
+  // index đại diện cho index của phần tử hiện tại đang duyệt
+  // code ..., được phép sử dụng 2 biên item và index ở trong đây
+});
+// Ra khỏi phạm vi của forEach thì sẽ không thể sử dụng 2 biến item và index nữa
+
+array_var_name.forEach((item) => {
+  // code ..
+});
+
+array_var_name.forEach(function (item, index) {
+  // code ...
+});
+```
+
+### Ví dụ:
+
+```javascript
+let arr = [1, 2, 3, 4, 5];
+
+arr.forEach((item, index) => {
+  console.log(item, index);
+});
+
+// 1 0
+// 2 1
+// 3 2
+// 4 3
+// 5 4
+```
