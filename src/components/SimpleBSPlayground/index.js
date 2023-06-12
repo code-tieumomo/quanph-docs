@@ -43,8 +43,6 @@ export function SimpleBSPlayground({
 
     return <div id={randomStr}></div>;
   } else {
-    const { siteConfig } = useDocusaurusContext();
-
     return (
       <div className="code-playground-notice">
         ⚡ Bật <span>Code playground</span> trong <Link to="/settings">Cài đặt</Link> để hiện code playground ⚡
