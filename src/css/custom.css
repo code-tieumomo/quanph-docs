@@ -76,6 +76,18 @@ button {
   border-width: 0;
 }
 
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
 /* Main */
 #__docusaurus {
   width: 100%;

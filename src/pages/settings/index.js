@@ -23,7 +23,7 @@ function InfoBlock() {
     );
   } else {
     return (
-      <div className="margin-bottom--xl">
+      <div className="margin-bottom--xl flex flex-col-reverse">
         <div data-netlify-identity-button className="margin-top--md"></div>
         <div className="avatar">
           <Link className="avatar__photo-link avatar__photo avatar__photo--lg" to="/settings">
