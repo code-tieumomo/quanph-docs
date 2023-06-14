@@ -13,11 +13,10 @@
 
 .settingItem {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 0.5rem 0;
   font-size: 0.875rem;
-  font-weight: 600;
   color: #414751;
 }
 
@@ -56,4 +55,46 @@
 
 .dotDisabled {
   transform: translateX(-0.125rem);
+}
+
+.settingBlockHead {
+  display: flex;
+  flex-direction: column;
+}
+
+.settingBlockTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #414751;
+}
+
+.settingBlockDes {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: #929292;
+  text-align: justify;
+}
+
+.settingBlock {
+  display: flex;
+  gap: 5rem;
+}
+
+.settingBlock > div:first-child {
+  width: 30%;
+}
+
+.settingBlock > div:last-child {
+  width: 70%;
+}
+
+.settingItemDesc {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+}
+
+.settingItemTitle {
+  font-weight: 600;
+  font-size: 0.875rem;
 }

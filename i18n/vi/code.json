@@ -259,7 +259,7 @@
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "cmfcmf/d-s-l.searchBar.placeholder": {
-    "message": "Tìm kiếm",
+    "message": "Tìm kiếm ...",
     "description": "Placeholder shown in the searchbar"
   },
   "cmfcmf/d-s-l.searchBar.clearButtonTitle": {

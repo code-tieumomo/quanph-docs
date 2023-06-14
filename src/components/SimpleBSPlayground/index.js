@@ -13,12 +13,13 @@ export function SimpleBSPlayground({
   title = "Code playground",
   description = "An code playground for you to play with the code!"
 }) {
-  const isCodePlaygroundEnabled = localStorage.getItem("isCodePlaygroundEnabled") === "true";
-  if (isCodePlaygroundEnabled) {
-    const files = require(`../../code/${fileName}`).files;
-    const randomStr = String(Math.random()).slice(9);
+  const randomStr = String(Math.random()).slice(9);
 
-    useEffect(() => {
+  useEffect(() => {
+    const isCodePlaygroundEnabled = localStorage.getItem("isCodePlaygroundEnabled") === "true";
+    if (isCodePlaygroundEnabled) {
+      const files = require(`../../code/${fileName}`).files;
+
       StackBlitzSDK.embedProject(
         randomStr,
         {
@@ -39,14 +40,12 @@ export function SimpleBSPlayground({
           height: height
         }
       );
-    }, []);
+    }
+  }, []);
 
-    return <div id={randomStr}></div>;
-  } else {
-    return (
-      <div className="code-playground-notice">
-        ⚡ Bật <span>Code playground</span> trong <Link to="/settings">Cài đặt</Link> để hiện code playground ⚡
-      </div>
-    );
-  }
+  return (
+    <div id={randomStr} className="code-playground-notice">
+      ⚡ Bật <span>Code playground</span> trong <Link to="/settings">Cài đặt</Link> để hiện code playground ⚡
+    </div>
+  );
 }
