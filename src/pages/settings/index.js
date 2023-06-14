@@ -11,9 +11,8 @@ function InfoBlock() {
   useEffect(() => {
     netlifyIdentity.setLocale("vi");
     netlifyIdentity.init({});
-  }, []);
+  });
 
-  console.log(netlifyIdentity.currentUser());
   const isLoggedIn = netlifyIdentity.currentUser() !== null;
   if (!isLoggedIn) {
     return (
