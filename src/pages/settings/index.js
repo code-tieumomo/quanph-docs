@@ -11,7 +11,7 @@ function InfoBlock() {
   useEffect(() => {
     netlifyIdentity.setLocale("vi");
     netlifyIdentity.init({});
-  });
+  }, []);
 
   const isLoggedIn = netlifyIdentity.currentUser() !== null;
   if (!isLoggedIn) {
@@ -58,7 +58,11 @@ export default function Home() {
     <Layout title={`Cài đặt`} description="Cài đặt">
       <div className={styles.settingsContainer}>
         <h1>Thông tin cá nhân</h1>
-        <InfoBlock />
+        {/* <InfoBlock /> */}
+        <div className="alert alert--warning margin-bottom--xl" role="alert">
+          Đang cập nhật ...
+        </div>
+
         <h1>Cài đặt</h1>
         <hr />
         <div className={styles.settingBlock}>
