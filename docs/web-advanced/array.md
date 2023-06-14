@@ -6,6 +6,7 @@ sidebar_position: 3
 ---
 
 import Playground from "javascript-playgrounds"
+
 import { SimpleBSPlayground } from '@site/src/components/SimpleBSPlayground';
 
 # Array

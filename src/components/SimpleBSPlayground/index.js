@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import StackBlitzSDK from "@stackblitz/sdk";
 import { useEffect } from "react";
 import Link from "@docusaurus/Link";
@@ -12,7 +12,8 @@ export function SimpleBSPlayground({
   title = "Code playground",
   description = "An code playground for you to play with the code!"
 }) {
-  const randomString = Math.random().toString(36).substring(7);
+  const plRef = useRef(null);
+  // const randomString = Math.random().toString(36).substring(7);
 
   useEffect(() => {
     const isCodePlaygroundEnabled = localStorage.getItem("isCodePlaygroundEnabled") === "true";
@@ -20,7 +21,7 @@ export function SimpleBSPlayground({
       const files = require(`../../code/${fileName}`).files;
 
       StackBlitzSDK.embedProject(
-        randomString,
+        plRef.current,
         {
           title: title,
           description: description,
@@ -43,7 +44,7 @@ export function SimpleBSPlayground({
   }, []);
 
   return (
-    <div id={randomString} className="code-playground-notice">
+    <div ref={plRef} className="code-playground-notice">
       ⚡ Bật <span>Code playground</span> trong <Link to="/settings">Cài đặt</Link> để hiện code playground ⚡
     </div>
   );
