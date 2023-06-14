@@ -24,6 +24,7 @@ function InfoBlock() {
   } else {
     return (
       <div className="margin-bottom--xl">
+        <div data-netlify-identity-button className="margin-top--md"></div>
         <div className="avatar">
           <Link className="avatar__photo-link avatar__photo avatar__photo--lg" to="/settings">
             <img alt="Avatar" src={netlifyIdentity.currentUser()?.user_metadata?.avatar_url ?? "https://i.pravatar.cc/300"} />
@@ -33,7 +34,6 @@ function InfoBlock() {
             <small className="avatar__subtitle">The choosen one 🔰</small>
           </div>
         </div>
-        <div data-netlify-identity-button className="margin-top--md"></div>
       </div>
     );
   }
@@ -82,7 +82,10 @@ export default function Home() {
               </Switch>
               <div className={styles.settingItemDesc}>
                 <span className={styles.settingItemTitle}>Code playground</span>
-                <span>Code playground</span>
+                <p>
+                  <span className="badge badge--warning margin-right--sm">Beta</span>
+                  Code playground
+                </p>
               </div>
             </div>
           </div>
