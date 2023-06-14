@@ -41,7 +41,7 @@ export function SimpleBSPlayground({
         }
       );
     }
-  }, []);
+  });
 
   return (
     <div id={randomStr} className="code-playground-notice">
