@@ -4,6 +4,31 @@ import styles from "./index.module.css";
 import clsx from "clsx";
 import { useState } from "react";
 import { Switch } from "@headlessui/react";
+import netlifyIdentity from "netlify-identity-widget";
+
+function InfoBlock() {
+  useEffect(() => {
+    netlifyIdentity.init({});
+  }, []);
+
+  console.log(netlifyIdentity.currentUser());
+  const isLoggedIn = netlifyIdentity.currentUser() !== null;
+  if (!isLoggedIn) {
+    return (
+      <div>
+        <div data-netlify-identity-menu></div>
+        <div data-netlify-identity-button>Login with Netlify Identity</div>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <div data-netlify-identity-menu></div>
+        <div data-netlify-identity-button>Logout with Netlify Identity</div>
+      </div>
+    );
+  }
+}
 
 export default function Home() {
   const [enabled, setEnabled] = useState(false);
@@ -24,6 +49,8 @@ export default function Home() {
   return (
     <Layout title={`Cài đặt`} description="Cài đặt">
       <div className={styles.settingsContainer}>
+        <h1>Thông tin cá nhân</h1>
+        <InfoBlock />
         <h1>Cài đặt</h1>
         <hr />
         <div className={styles.settingBlock}>
