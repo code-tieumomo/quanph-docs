@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { useState } from "react";
 import { Switch } from "@headlessui/react";
 import netlifyIdentity from "netlify-identity-widget";
+import Link from "@docusaurus/Link";
 
 function InfoBlock() {
   useEffect(() => {
@@ -15,16 +16,23 @@ function InfoBlock() {
   const isLoggedIn = netlifyIdentity.currentUser() !== null;
   if (!isLoggedIn) {
     return (
-      <div>
-        <div data-netlify-identity-menu></div>
-        <div data-netlify-identity-button>Login with Netlify Identity</div>
+      <div className="margin-bottom--xl">
+        <div data-netlify-identity-button className="margin-top--md"></div>
       </div>
     );
   } else {
     return (
-      <div>
-        <div data-netlify-identity-menu></div>
-        <div data-netlify-identity-button>Logout with Netlify Identity</div>
+      <div className="margin-bottom--xl">
+        <div className="avatar">
+          <Link className="avatar__photo-link avatar__photo avatar__photo--lg" to="/settings">
+            <img alt="Avatar" src={netlifyIdentity?.currentUser?.user_metadata?.avatar_url ?? "https://i.pravatar.cc/300"} />
+          </Link>
+          <div className="avatar__intro">
+            <div className="avatar__name">{netlifyIdentity?.currentUser?.user_metadata?.fullName ?? "Jedi"}</div>
+            <small className="avatar__subtitle">The choosen one 🔰</small>
+          </div>
+        </div>
+        <div data-netlify-identity-button className="margin-top--md"></div>
       </div>
     );
   }
