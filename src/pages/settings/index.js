@@ -9,6 +9,7 @@ import Link from "@docusaurus/Link";
 
 function InfoBlock() {
   useEffect(() => {
+    netlifyIdentity.setLocale("vi");
     netlifyIdentity.init({});
   }, []);
 
@@ -25,10 +26,10 @@ function InfoBlock() {
       <div className="margin-bottom--xl">
         <div className="avatar">
           <Link className="avatar__photo-link avatar__photo avatar__photo--lg" to="/settings">
-            <img alt="Avatar" src={netlifyIdentity?.currentUser?.user_metadata?.avatar_url ?? "https://i.pravatar.cc/300"} />
+            <img alt="Avatar" src={netlifyIdentity.currentUser()?.user_metadata?.avatar_url ?? "https://i.pravatar.cc/300"} />
           </Link>
           <div className="avatar__intro">
-            <div className="avatar__name">{netlifyIdentity?.currentUser?.user_metadata?.fullName ?? "Jedi"}</div>
+            <div className="avatar__name">{netlifyIdentity.currentUser()?.user_metadata?.full_name ?? "Jedi"}</div>
             <small className="avatar__subtitle">The choosen one 🔰</small>
           </div>
         </div>
