@@ -21,5 +21,4 @@ Tuy nhiên có một lưu ý, việc sử dụng code playground tương đối 
 ## Todo
 
 - [ ] Hoàn thiện bài Git
-- [x] Hoàn thiện bài Responsive
 - [ ] Thêm bài Selector CSS (https://www.lambdatest.com/blog/css-selectors-cheat-sheet/https://www.lambdatest.com/blog/css-selectors-cheat-sheet/)
