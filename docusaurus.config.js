@@ -13,7 +13,10 @@ const config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: process.env.APP_ENV === "development" ? "http://localhost:3000" : "https://quanph.netlify.app",
+  url:
+    process.env.APP_ENV === "development"
+      ? "http://localhost:3000"
+      : "https://quanph.netlify.app",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -31,7 +34,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "vi",
-    locales: ["vi"]
+    locales: ["vi"],
   },
 
   presets: [
@@ -43,7 +46,9 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/code-tieumomo/quanph-docs/tree/master/"
+          editUrl: "https://github.com/code-tieumomo/quanph-docs/tree/master/",
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,
@@ -51,13 +56,13 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/code-tieumomo/quanph-docs/tree/master/",
           blogSidebarTitle: "Tất cả bài viết",
-          blogSidebarCount: "ALL"
+          blogSidebarCount: "ALL",
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css")
-        }
-      })
-    ]
+          customCss: require.resolve("./src/css/custom.css"),
+        },
+      }),
+    ],
   ],
 
   themeConfig:
@@ -70,7 +75,7 @@ const config = {
         // hideOnScroll: true,
         logo: {
           alt: "Logo",
-          src: "https://img.icons8.com/arcade/100/null/book-shelf.png"
+          src: "https://img.icons8.com/arcade/100/null/book-shelf.png",
         },
         items: [
           {
@@ -79,39 +84,46 @@ const config = {
             docId: "intro",
             position: "left",
             label: "Tài liệu",
-            sidebarid: "docs"
+            sidebarid: "docs",
           },
           {
             to: "/posts/intro",
             position: "left",
             label: "Bài viết",
             activeBaseRegex: `/posts/`,
-            sidebarid: "posts"
+            sidebarid: "posts",
+          },
+          {
+            to: "/teaching/intro",
+            position: "left",
+            label: "Giảng dạy",
+            activeBaseRegex: `/teaching/`,
+            sidebarid: "teaching",
           },
           {
             href: "/settings",
             position: "right",
-            className: "header-config-link"
+            className: "header-config-link",
           },
           {
             href: "https://github.com/code-tieumomo/quanph-docs",
             position: "right",
-            className: "header-github-link"
-          }
-        ]
+            className: "header-github-link",
+          },
+        ],
       },
       footer: {
-        copyright: `Copyright © ${new Date().getFullYear()}. Được <a href="https://github.com/code-tieumomo" target="_blank">Quân</a> xây dựng bằng Docusaurus.`
+        copyright: `Copyright © ${new Date().getFullYear()}. Được <a href="https://github.com/code-tieumomo" target="_blank">Quân</a> xây dựng bằng Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
-        darkTheme: darkCodeTheme
+        darkTheme: darkCodeTheme,
       },
       docs: {
         sidebar: {
-          hideable: true
-        }
-      }
+          hideable: true,
+        },
+      },
     }),
 
   plugins: [
@@ -121,8 +133,8 @@ const config = {
         indexDocs: true,
         indexBlog: true,
         indexPages: true,
-        language: "vi"
-      }
+        language: "vi",
+      },
     ],
     [
       "content-docs",
@@ -142,13 +154,30 @@ const config = {
         sidebarPath: require.resolve("./sidebarsPosts.js"),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
-        editUrl: "https://github.com/code-tieumomo/quanph-docs/tree/master/"
-      })
-    ]
+        editUrl: "https://github.com/code-tieumomo/quanph-docs/tree/master/",
+      }),
+    ],
+    [
+      "content-docs",
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      ({
+        id: "teaching",
+        path: "teaching",
+        routeBasePath: "teaching",
+        editCurrentVersion: true,
+        sidebarPath: require.resolve("./sidebarsTeaching.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        editUrl: "https://github.com/code-tieumomo/quanph-docs/tree/master/",
+      }),
+    ],
+    [
+      "docusaurus2-dotenv-2",
+      {
+        systemvars: true,
+      },
+    ],
   ],
-  customFields: {
-    isOpenPlayground: true
-  }
 };
 
 module.exports = config;

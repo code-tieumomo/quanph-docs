@@ -228,60 +228,86 @@ iframe {
   font-weight: 500;
 }
 
-/* Netlify */
-.netlify-identity-button {
+/* Auth notice */
+.auth-notice {
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.auth-notice.fixed {
+  position: fixed;
+  inset: 0;
+  background-color: #fff;
+  z-index: 99999999999;
+  min-height: unset;
+}
+
+.auth-notice > svg {
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.auth-notice > p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.auth-notice > a {
+  margin-top: 2rem;
   appearance: none;
-  background-color: #fafbfc;
-  border: 1px solid rgba(27, 31, 35, 0.15);
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, .15);
   border-radius: 6px;
-  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
   box-sizing: border-box;
-  color: #24292e;
+  color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   line-height: 20px;
-  list-style: none;
   padding: 6px 16px;
   position: relative;
-  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  text-align: center;
+  text-decoration: none;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: middle;
   white-space: nowrap;
-  word-wrap: break-word;
 }
 
-.netlify-identity-button:hover {
-  background-color: #f3f4f6;
-  text-decoration: none;
-  transition-duration: 0.1s;
+.auth-notice > a:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
 }
 
-.netlify-identity-button:disabled {
-  background-color: #fafbfc;
-  border-color: rgba(27, 31, 35, 0.15);
-  color: #959da5;
+.auth-notice > a:hover {
+  background-color: #2c974b;
+}
+
+.auth-notice > a:focus {
+  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+  outline: none;
+}
+
+.auth-notice > a:disabled {
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, .1);
+  color: rgba(255, 255, 255, .8);
   cursor: default;
 }
 
-.netlify-identity-button:active {
-  background-color: #edeff2;
-  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
-  transition: none 0s;
-}
-
-.netlify-identity-button:focus {
-  outline: 1px transparent;
-}
-
-.netlify-identity-button:before {
-  display: none;
-}
-
-.netlify-identity-button:-webkit-details-marker {
-  display: none;
+.auth-notice > a:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
 }
