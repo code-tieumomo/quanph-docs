@@ -22,3 +22,8 @@ Tuy nhiên có một lưu ý, việc sử dụng code playground tương đối 
 
 - [ ] Hoàn thiện bài Git
 - [ ] Thêm bài Selector CSS (https://www.lambdatest.com/blog/css-selectors-cheat-sheet/https://www.lambdatest.com/blog/css-selectors-cheat-sheet/)
+- [ ] Thêm bài Authentication Based on Subrequest Result nginx
+- [ ] Thêm bài create laravel package
+- [ ] Thêm bài Linux file permission
+- [ ] Thêm bài Crawl with Spatie Crawler
+- [ ] Thêm bài Setup Elasticsearch multi node
