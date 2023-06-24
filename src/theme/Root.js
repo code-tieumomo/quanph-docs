@@ -3,8 +3,7 @@ import { auth, db, loginWithGoogle, signInWithG } from "../services/firebase";
 import { useLocation } from "@docusaurus/router";
 import Link from "@docusaurus/Link";
 import image401 from "@site/static/img/401.gif";
-import Layout from "@theme/Layout";
-import { child, get, ref, set } from "firebase/database";
+import { child, get, ref } from "firebase/database";
 
 export default function Root({ children }) {
   const location = useLocation();
@@ -17,11 +16,24 @@ export default function Root({ children }) {
       const userRef = ref(db);
       get(child(userRef, "users/" + user.uid))
         .then((snapshot) => {
-          if (snapshot.exists() && snapshot.val().isTeacher === true) {
+          if (snapshot.exists() && snapshot.val().is_teacher === true) {
             setUserAuth(user);
           } else {
+            fetch(`${process.env.SERVER_URL}/api/authorize-teacher-from-dcsr`, {
+              method: "POST",
+              body: JSON.stringify({
+                email: user.email,
+                uid: user.uid,
+              }),
+            })
+              .then((res) => {
+                res.json();
+              })
+              .then((data) => {
+                console.log(data);
+              });
             setMessage(
-              "Bạn không có quyền xem nội dung này! Vui lòng sử dụng tài khoản khác."
+              "Bạn chưa có quyền xem nội dung này! Vui lòng đợi được cấp quyền hoặc sử dụng tài khoản khác."
             );
           }
           setIsLoaded(true);
@@ -32,6 +44,7 @@ export default function Root({ children }) {
     } else {
       setMessage("Bạn cần đăng nhập để xem nội dung này.");
       setIsLoaded(true);
+      setUserAuth(null);
     }
   });
 

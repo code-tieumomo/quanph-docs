@@ -1,3 +1,7 @@
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
+
 /**
  * Any CSS included here will be global. The classic template
  * bundles Infima by default. Infima is a CSS framework designed to
@@ -76,16 +80,18 @@ button {
   border-width: 0;
 }
 
-.flex {
-  display: flex;
+.spin {
+  animation: spin 1s linear infinite;
 }
 
-.flex-col {
-  flex-direction: column;
-}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
 
-.flex-col-reverse {
-  flex-direction: column-reverse;
+  100% {
+    transform: rotate(359deg);
+  }
 }
 
 /* Main */
