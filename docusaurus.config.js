@@ -188,6 +188,19 @@ const config = {
         },
       };
     },
+    [
+      "@docusaurus/plugin-google-gtag",
+      {
+        trackingID: "G-26EESYPVB9",
+        anonymizeIP: true,
+      },
+    ],
+    [
+      "@docusaurus/plugin-google-tag-manager",
+      {
+        containerId: "GTM-TV5CB5P",
+      },
+    ],
   ],
 };
 
