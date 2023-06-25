@@ -4,6 +4,7 @@ import { useLocation } from "@docusaurus/router";
 import Link from "@docusaurus/Link";
 import image401 from "@site/static/img/401.gif";
 import { child, get, ref } from "firebase/database";
+import { Toaster } from "react-hot-toast";
 
 export default function Root({ children }) {
   const location = useLocation();
@@ -63,7 +64,12 @@ export default function Root({ children }) {
         </main>
       )}
       {isAllow() ? (
-        <>{children}</>
+        <>
+          <div>
+            <Toaster />
+          </div>
+          {children}
+        </>
       ) : (
         <main className="auth-notice">
           <img src={image401} />

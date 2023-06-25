@@ -59,7 +59,7 @@ export default function Home() {
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-gray-900 truncate mb-0 dark:text-white">
                     <span className="inline-flex mr-2 items-center rounded-md bg-red-50 px-1 py-0.5 text-xs font-medium text-red-700 border border-red-200 border-solid">
-                      Teacher
+                      Logged in
                     </span>
                     {currentUser.displayName}
                   </p>
@@ -85,7 +85,7 @@ export default function Home() {
             type="button"
             onClick={login}
           >
-            Đăng nhập
+            Lecturer ?
           </button>
         )}
 
