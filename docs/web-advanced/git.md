@@ -7,6 +7,10 @@ sidebar_position: 1
 
 # Git và Github
 
+:::danger
+**Chưa hoàn thiện 🚧**
+:::
+
 ## Git là gì
 
 Git là một hệ thống quản lý phiên bản phân tán (Distributed Version Control System - DVCS) được phát triển bởi Linus Torvalds vào năm 2005. Git là một trong những hệ thống quản lý phiên bản phân tán phổ biến nhất hiện nay.

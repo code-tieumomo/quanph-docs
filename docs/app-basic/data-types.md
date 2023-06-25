@@ -8,5 +8,3 @@ sidebar_position: 2
 # Kiểu dữ liệu
 
 Trong Python có một số kiểu dữ liệu cơ bản thường hay sử dụng:
-
-- 

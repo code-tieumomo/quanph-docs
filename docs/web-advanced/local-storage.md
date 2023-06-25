@@ -2,7 +2,7 @@
 description: Local Storage - cơ chế lưu trữ dữ liệu trên trình duyệt.
 image: https://res.cloudinary.com/de4rvmslk/image/upload/w_2000/f_auto,q_auto//img/LocalStorage-cover_photo.png
 toc_max_heading_level: 6
-sidebar_position: 4
+sidebar_position: 6
 ---
 
 # Local Storage
@@ -22,7 +22,7 @@ Local Storage lưu dữ liệu theo domain (tên miền) của trang web. Ví d�
 **Local Storage** lưu trữ dữ liệu dưới dạng các key-value. Mỗi key sẽ tương ứng với một value. Ví dụ:
 
 ```js
-localStorage.setItem('name', 'John');
+localStorage.setItem("name", "John");
 ```
 
 Trong đoạn code trên, `name` là key, `John` là value.
@@ -59,7 +59,7 @@ Sử dụng phương thức `setItem()` để lưu trữ dữ liệu vào **Loca
 Ví dụ:
 
 ```js
-localStorage.setItem('name', 'John');
+localStorage.setItem("name", "John");
 ```
 
 ### `getItem(key)`
@@ -71,7 +71,7 @@ Sử dụng phương thức `getItem()` để lấy dữ liệu từ **Local Sto
 Ví dụ:
 
 ```js
-const name = localStorage.getItem('name');
+const name = localStorage.getItem("name");
 ```
 
 ### `removeItem(key)`
@@ -83,7 +83,7 @@ Sử dụng phương thức `removeItem()` để xóa dữ liệu từ **Local S
 Ví dụ:
 
 ```js
-localStorage.removeItem('name');
+localStorage.removeItem("name");
 ```
 
 ### `clear()`
@@ -101,21 +101,24 @@ localStorage.clear();
 ### Lưu trữ dữ liệu
 
 ```js
-localStorage.setItem('name', 'John');
-localStorage.setItem('age', 20);
-localStorage.setItem('isMale', true);
-localStorage.setItem('hobbies', JSON.stringify(['reading', 'coding']));
-localStorage.setItem('address', JSON.stringify({ city: 'Hanoi', country: 'Vietnam' }));
+localStorage.setItem("name", "John");
+localStorage.setItem("age", 20);
+localStorage.setItem("isMale", true);
+localStorage.setItem("hobbies", JSON.stringify(["reading", "coding"]));
+localStorage.setItem(
+  "address",
+  JSON.stringify({ city: "Hanoi", country: "Vietnam" })
+);
 ```
 
 ### Lấy dữ liệu
 
 ```js
-const name = localStorage.getItem('name');
-const age = localStorage.getItem('age');
-const isMale = localStorage.getItem('isMale');
-const hobbies = JSON.parse(localStorage.getItem('hobbies'));
-const address = JSON.parse(localStorage.getItem('address'));
+const name = localStorage.getItem("name");
+const age = localStorage.getItem("age");
+const isMale = localStorage.getItem("isMale");
+const hobbies = JSON.parse(localStorage.getItem("hobbies"));
+const address = JSON.parse(localStorage.getItem("address"));
 ```
 
 ## JSON
@@ -125,8 +128,8 @@ const address = JSON.parse(localStorage.getItem('address'));
 - Dữ liệu `hobbies` và `address` cần được thể hiện dưới dạng `array` và `object`, nhưng Local Storage chỉ có thể lưu trữ dữ liệu dạng `string`. Do đó ta cần chuyển đổi dữ liệu sang dạng `string` trước khi lưu trữ. Để làm được thao tác này ta cần hàm `JSON.stringify()`.
 
 ```js
-const hobbies = JSON.stringify(['reading', 'coding']);
-const address = JSON.stringify({ city: 'Hanoi', country: 'Vietnam' });
+const hobbies = JSON.stringify(["reading", "coding"]);
+const address = JSON.stringify({ city: "Hanoi", country: "Vietnam" });
 
 console.log(hobbies); // '["reading","coding"]'
 console.log(address); // '{"city":"Hanoi","country":"Vietnam"}'
@@ -135,8 +138,8 @@ console.log(address); // '{"city":"Hanoi","country":"Vietnam"}'
 - Khi lấy dữ liệu từ Local Storage ra, dữ liệu sẽ là dạng `string` và ta cần chuyển đổi dữ liệu về dạng ban đầu để dễ dàng thao tác hơn. Để làm được thao tác này ta cần hàm `JSON.parse()`.
 
 ```js
-const hobbies = JSON.parse(localStorage.getItem('hobbies'));
-const address = JSON.parse(localStorage.getItem('address'));
+const hobbies = JSON.parse(localStorage.getItem("hobbies"));
+const address = JSON.parse(localStorage.getItem("address"));
 
 console.log(hobbies); // ['reading', 'coding']
 console.log(address); // { city: 'Hanoi', country: 'Vietnam' }
