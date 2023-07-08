@@ -161,7 +161,7 @@ export default function NavbarContent() {
           ) : (
             <button
               onClick={loginWithGoogle}
-              className="bg-green-500 text-white shrink-0 hover:bg-green-600 font-bold text-xs !px-2 py-1.5 rounded cursor-pointer shadow outline-none focus:outline-none ease-linear transition-all duration-150"
+              className="bg-emerald-500 text-white shrink-0 hover:bg-emerald-600 font-bold text-xs !px-2 py-1.5 rounded cursor-pointer shadow outline-none focus:outline-none ease-linear transition-all duration-150"
               type="button"
             >
               Lecturer ?

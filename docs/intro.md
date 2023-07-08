@@ -27,3 +27,4 @@ Tuy nhiên có một lưu ý, việc sử dụng code playground tương đối 
 - [ ] Thêm bài Linux file permission
 - [ ] Thêm bài Crawl with Spatie Crawler
 - [ ] Thêm bài Setup Elasticsearch multi node
+- [ ] Thêm bài How browser render a page (https://www.youtube.com/watch?v=SmE4OwHztCc)
