@@ -51,7 +51,7 @@ export default function Home() {
   return (
     <Layout title={`Trang chủ`} description="Tài liệu tham khảo">
       <section className="px-2 py-32 bg-white md:px-0">
-        <div className="container items-center max-w-6xl px-8 mx-auto xl:px-5">
+        <div className="container items-center !max-w-6xl px-8 mx-auto xl:px-5">
           <div className="flex flex-wrap items-center sm:-mx-3">
             <div className="w-full md:w-1/2 md:px-3">
               <div className="w-full pb-6 space-y-6 sm:max-w-md lg:max-w-lg md:space-y-4 lg:space-y-8 xl:space-y-9 sm:pr-5 lg:pr-0 md:pb-0">
