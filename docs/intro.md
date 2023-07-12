@@ -18,6 +18,10 @@ Trong các trang tài liệu, ta có thể sử dụng các code playground đ�
 Tuy nhiên có một lưu ý, việc sử dụng code playground tương đối tốn tài nguyên và quá nhiều code playground sẽ làm chậm tốc độ tải trang. Vì vậy, các code playground mặc định sẽ luôn tắt, để bật các code playground, cần vào trang [Cài đặt](/settings) và bật `Code playground` (mặc định là tắt).
 :::
 
+## Cú pháp
+
+- Các phần cú pháp được viết dưới dạng `<name>, <param1>, <param2>, ...` là các phần cần được thay thế bằng tên, biến hoặc giá trị thực tế.
+
 ## Todo
 
 - [ ] Hoàn thiện bài Git
