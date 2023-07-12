@@ -125,7 +125,3 @@ console.log(result); // Phương trình có nghiệm kép x = -1
 ## Lưu ý
 
 - Hàm có tham số hay không thì cũng vẫn phải có cặp dấu ngoặc đơn `()` sau tên hàm khi gọi hàm và khi khai báo.
-
-```
-
-```
