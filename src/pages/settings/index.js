@@ -81,7 +81,7 @@ export default function Home() {
           </div>
         ) : (
           <button
-            className="bg-green-500 text-white hover:bg-green-600 font-bold text-xs px-2 py-1.5 mb-16 rounded cursor-pointer shadow outline-none focus:outline-none ease-linear transition-all duration-150"
+            className="bg-emerald-500 text-white hover:bg-emerald-600 font-bold text-xs px-2 py-1.5 mb-16 rounded cursor-pointer shadow outline-none focus:outline-none ease-linear transition-all duration-150"
             type="button"
             onClick={login}
           >
