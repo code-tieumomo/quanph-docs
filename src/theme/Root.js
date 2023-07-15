@@ -19,6 +19,7 @@ export default function Root({ children }) {
         .then((snapshot) => {
           if (snapshot.exists() && snapshot.val().is_teacher === true) {
             setUserAuth(user);
+            setIsLoaded(true);
           } else {
             fetch(`${process.env.SERVER_URL}/api/authorize-teacher-from-dcsr`, {
               method: "POST",
@@ -28,16 +29,17 @@ export default function Root({ children }) {
               }),
             })
               .then((res) => {
-                res.json();
+                return res.json();
               })
               .then((data) => {
                 console.log(data);
+                setIsLoaded(true);
               });
+
             setMessage(
               "Bạn chưa có quyền xem nội dung này! Vui lòng đợi được cấp quyền hoặc sử dụng tài khoản khác."
             );
           }
-          setIsLoaded(true);
         })
         .catch((error) => {
           console.error(error);
