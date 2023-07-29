@@ -50,7 +50,6 @@ button {
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-heading-font-family: "Nunito", sans-serif;
-
   --aa-primary-color-rgb: 32, 93, 59 !important;
 }
 
@@ -103,7 +102,8 @@ button {
 
 .img_node_modules-\@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module,
 article img {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
 }
 
 .code-playground-notice {

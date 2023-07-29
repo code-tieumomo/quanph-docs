@@ -21,20 +21,20 @@ export default function Root({ children }) {
             setUserAuth(user);
             setIsLoaded(true);
           } else {
-            fetch(`${process.env.SERVER_URL}/api/authorize-teacher-from-dcsr`, {
-              method: "POST",
-              body: JSON.stringify({
-                email: user.email,
-                uid: user.uid,
-              }),
-            })
-              .then((res) => {
-                return res.json();
-              })
-              .then((data) => {
-                console.log(data);
-                setIsLoaded(true);
-              });
+            // fetch(`${process.env.SERVER_URL}/api/authorize-teacher-from-dcsr`, {
+            //   method: "POST",
+            //   body: JSON.stringify({
+            //     email: user.email,
+            //     uid: user.uid,
+            //   }),
+            // })
+            //   .then((res) => {
+            //     return res.json();
+            //   })
+            //   .then((data) => {
+            //     console.log(data);
+            //     setIsLoaded(true);
+            //   });
 
             setMessage(
               "Bạn chưa có quyền xem nội dung này! Vui lòng đợi được cấp quyền hoặc sử dụng tài khoản khác."

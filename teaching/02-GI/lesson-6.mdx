@@ -1,0 +1,159 @@
+# Lesson 6
+
+- Plan: https://docs.google.com/document/d/1OA35J2-CmyGymuMoKa8Ta-YjjKP2vHTltVVz23TZqTA/edit?usp=sharing
+- Slide: https://docs.google.com/presentation/d/12HrS5HvFMHDkGQZZWfHnFGMDlH8EQIQ7wf2bDSWkUvE/edit?usp=sharing
+- Material: https://drive.google.com/drive/folders/175LDYDV5TRMXD6Eh7ORGUJD5fTOtwd3c?usp=drive_link
+
+## Plan
+
+### Map
+
+> 480 x 257
+
+![Map](https://res.cloudinary.com/dyxp9ndma/image/upload/v1690652655/MindX/Screenshot_from_2023-07-30_00-43-33_kpbvgm.png)
+
+### Step by step
+
+#### Init state
+
+Object `King` -> Event `Create`
+
+![](https://res.cloudinary.com/dyxp9ndma/image/upload/v1690653055/MindX/Screenshot_from_2023-07-30_00-50-33_vjlbfm.png)
+
+---
+
+Object `Pig` -> Event `Create`
+
+![](https://res.cloudinary.com/dyxp9ndma/image/upload/v1690653194/MindX/Screenshot_from_2023-07-30_00-52-38_t2dsvj.png)
+
+---
+
+Object `Box` -> Event `Create`
+
+![](https://res.cloudinary.com/dyxp9ndma/image/upload/v1690653308/MindX/Screenshot_from_2023-07-30_00-54-39_qtlna9.png)'
+
+---
+
+Object `Canon` -> Event `Create`
+
+![](https://res.cloudinary.com/dyxp9ndma/image/upload/v1690653307/MindX/Screenshot_from_2023-07-30_00-54-55_ewwzpn.png)
+
+#### Init step controller
+
+Object `King` -> Event `Step`
+
+![](https://res.cloudinary.com/dyxp9ndma/image/upload/v1690654050/MindX/Screenshot_from_2023-07-30_01-07-16_nfk6xk.png)
+
+---
+
+Object `Pig` -> Event `Step`
+
+![](https://res.cloudinary.com/dyxp9ndma/image/upload/v1690654203/MindX/Screenshot_from_2023-07-30_01-09-52_jw6qxn.png)
+
+#### King idle
+
+- Abilities
+
+  Object `King` -> Event `Step` -> Action `Execute code`
+
+  ```js
+  spd = 3;
+  grv = 1;
+  moveX = 0;
+  moveY = 0;
+  hp = 3;
+  ```
+
+---
+
+- Need a solid object to stand on the ground
+
+![](https://res.cloudinary.com/dyxp9ndma/image/upload/v1690654526/MindX/Screenshot_from_2023-07-30_01-15-16_f5yno8.png)
+
+---
+
+- Physics
+
+  - Gravity and apply movement
+
+    Object `King` -> Event `Step` -> New Action `Execute code`
+
+    ```js
+    // Gravity
+    if (moveY < 10) {
+      moveY = min(moveY + grv, 9);
+    }
+
+    // Collision
+    if (place_meeting(x, y + moveY, obj_solid)) {
+      while (not place_meeting(x, y + sign(moveY), obj_solid)) {
+        y += sign(moveY);
+      }
+
+      moveY = 0;
+    }
+
+    // Movement
+    x += moveX;
+    y += moveY;
+    ```
+
+    - Input
+
+      - `scr_input`
+
+        ```js
+        pressA = keyboard_check(ord("A"));
+        pressD = keyboard_check_pressed(ord("D"));
+        pressS = keyboard_check(ord("S"));
+        pressW = keyboard_check_pressed(ord("W"));
+
+        pressSpace = keyboard_check_pressed(vk_space);
+        ```
+
+      - `scr_king_idle`
+
+        ```js
+        scr_input();
+
+        sprite_index = s_king_idle;
+        spd = 0;
+
+        if (preesA or pressD) {
+          state = stateKings.run;
+        } else if (pressW) {
+          moveY = -10;
+          // state = stateKings.jump;
+          show_debug_message("Jump");
+        } else if (pressSpace) {
+          // state = stateKings.attack;
+          show_debug_message("Attack");
+        }
+        ```
+
+    - Run
+
+      - `scr_king_run`
+
+        ```js
+        scr_input();
+
+        sprite_index = s_king_run;
+        spd = 3;
+        moveX = (pressD - pressA) * spd;
+
+        if (pressA + pressD == 0) {
+          state = stateKings.idle;
+        }
+        ```
+
+      - Object `King` -> Event `Step` -> New Action `Execute code`
+
+        ```js
+        /// Sprite control
+        if (pressA + pressD != 0) {
+          image_xscale = sign(pressD - pressA);
+          // 1: right
+          // -1: left
+        }
+        ```
