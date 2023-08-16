@@ -1,8 +1,0 @@
-{
-    "label": "App Basic",
-    "position": 3,
-    "link": {
-        "type": "generated-index",
-        "description": "Lập trình app cơ bản bằng Python"
-    }
-}
